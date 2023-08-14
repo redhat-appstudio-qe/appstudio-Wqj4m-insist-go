@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: dc-metro-map-lx7c
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: dc-metro-map-lx7c
+    app.kubernetes.io/part-of: appstudio
+  name: dc-metro-map-lx7crrrd
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: dc-metro-map-lx7c
+    weight: 100
+status: {}
